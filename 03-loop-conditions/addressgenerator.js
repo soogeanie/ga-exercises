@@ -30,6 +30,6 @@ var randomElem = function(arrayName) {
   return (arrayName[Math.floor(Math.random() * arrayName.length)]);
 };
 
-var address = randomElem(street_number) + " "  + randomElem(street_name) + " " + randomElem(city) + " " + randomElem(state) + " " + randomElem(zip)
+var address = randomElem(street_number) + " "  + randomElem(street_name) + " " + randomElem(city) + ", " + randomElem(state) + " " + randomElem(zip)
 
 console.log(address);
