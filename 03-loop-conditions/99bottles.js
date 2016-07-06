@@ -3,7 +3,7 @@ var totalBeers = 99;
 
 // Loop through totalBeers for
 // beers on the wall song
-for(numBeers = totalBeers; numBeers >= 0; numBeers--) {
+for(var numBeers = totalBeers; numBeers >= 0; numBeers--) {
   var amtOfBeers = function(numBeers) {
     if(numBeers > 1 || numBeers === 0) {
       return numBeers + " bottles";
