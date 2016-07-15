@@ -23,6 +23,11 @@ for(var i = 0; i < flickerObj.items.length; i++) {
   console.log(flickerObj.items[i].title + " " + flickerObj.items[i].date_taken);
 }
 
+// using forEach
+flickerObj.items.forEach(fucntion(item){
+  console.log(item.title + " " + item.date_taken);
+})
+
 /*
 3. Create a new array called 'links'. Iterate through the items array in flickerObj and store the the links to each item in the 'links' array.
 */
@@ -32,6 +37,11 @@ var links = [];
 for(var i = 0; i < flickerObj.items.length; i++) {
   links.push(flickerObj.items[i].link);
 }
+
+// using forEach
+flickerObj.items.forEach(function(item){
+  links.push(item.link);
+})
 
 /*
 4. Convert the 'links' array into a JSON string. Do a console.log of that JSON string, copy the results from the terminal and paste them into the input box at http://jsonlint.com/
