@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Bugs</title>
+
+    <script>
+      alert('From inline script body is: ' + document.getElementById('the-body'))
+    </script>
+  </head>
+
+  <body id="the-body" onload="alert('From Body Onload body is: ' + document.getElementById('the-body'))">
+    
+  </body>
+</html>

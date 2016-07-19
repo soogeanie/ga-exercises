@@ -1,0 +1,17 @@
+main {
+  margin: 100px auto;
+  max-width: 970px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 50px auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+li {
+  margin: 10px auto;
+}
