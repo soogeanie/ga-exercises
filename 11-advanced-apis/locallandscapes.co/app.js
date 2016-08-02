@@ -7,7 +7,7 @@ $(function () {
 
   // initialize the SDK with our API key
   _500px.init({
-   sdk_key: '1a624074fba4a06deb73391adff2be888f18d740' // oh ma ma ma. Don't store this in your code!
+   sdk_key: '1a624074fba4a06deb73391adff2be888f18d740'
   });
 
   // logging a user in
@@ -58,8 +58,6 @@ $(function () {
         };
 
         _500px.api('/photos/search', searchParams, function(response) {
-          console.log(response);
-
           var photos = response.data.photos;
 
           var $images = $('.images');
