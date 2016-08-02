@@ -18,12 +18,12 @@ $(function () {
   // this doesn't do anything
   // no documentation on 500px
   // on how to log out
-  $logoutBtn.click(function() {
-    _500px.on('logout', function() {
-      $signInView.show();
-      $imageResultsView.hide();
-    })
-  });
+  // $logoutBtn.click(function() {
+  //   _500px.on('logout', function() {
+  //     $signInView.show();
+  //     $imageResultsView.hide();
+  //   })
+  // });
 
   // If the user has already logged in & authorized your application,
   // this will get the user authorization status
@@ -31,15 +31,15 @@ $(function () {
   // each time the page is refreshed
   _500px.getAuthorizationStatus();
 
-  _500px.ensureAuthorization(function () {
-    _500px.api('/users', function (response) {
-        $('#username').append(response.data.user.fullname);
-    });
-  });
-
   _500px.on('authorization_obtained', function() {
     $signInView.hide();
     $imageResultsView.show();
+
+    // if user is logged in,
+    // show their username in the nav
+    _500px.api('/users', function (response) {
+        $('#username').append(response.data.user.fullname);
+    });
 
     // check if geolocation is available in the browser
     if(navigator.geolocation) {
@@ -53,17 +53,18 @@ $(function () {
 
         var searchParams = {
           geo: lat + ',' + long + ',' + radius,
-          rpp: 24,
-          image_size: 3
+          rpp: 28,
+          image_size: 3,
+          sort: 'highest_rating'
         };
 
         _500px.api('/photos/search', searchParams, function(response) {
+          console.log(response);
+
           var photos = response.data.photos;
 
-          var $images = $('.images');
-
           for(var i = 0; i < photos.length; i++) {
-            $images.append($('<img/>', {
+            $imageContainer.append($('<img/>', {
               class: 'image',
               src: photos[i].image_url
             }));
