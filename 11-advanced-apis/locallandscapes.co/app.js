@@ -15,15 +15,13 @@ $(function () {
     _500px.login();
   });
 
-  // this doesn't do anything
-  // no documentation on 500px
-  // on how to log out
-  // $logoutBtn.click(function() {
-  //   _500px.on('logout', function() {
-  //     $signInView.show();
-  //     $imageResultsView.hide();
-  //   })
-  // });
+  // if user clicks logout
+  // logged them out
+  $logoutBtn.click(function() {
+    _500px.logout();
+    $signInView.show();
+    $imageResultsView.hide();
+  });
 
   // If the user has already logged in & authorized your application,
   // this will get the user authorization status
